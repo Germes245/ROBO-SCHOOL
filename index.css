@@ -512,7 +512,6 @@ footer{
 
 #upper_of_footer{
   position: relative;
-  height: 460px;
   background-color: #D52027;
   display: flex;
   flex-direction: row;
@@ -520,6 +519,13 @@ footer{
   align-items: stretch;
   padding: 87px;
   gap: 144px;
+}
+
+@media (max-width: 1000px) {
+  #upper_of_footer{
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 #discont{
@@ -580,16 +586,22 @@ footer form button{
   background-color: #141024;
   padding: 40px 100px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: stretch;
 }
 
 .downer_of_footer-div{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   align-items: stretch;
+}
+@media (max-width:1000px) {
+  .downer_of_footer-div{
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
 .downer_of_footer-div-span{
@@ -600,6 +612,7 @@ footer form button{
 
 #downer_of_footer-div-span{
   color: #FFFFFFB2;
+  margin-top: 20px;
 }
 
 @media (max-width: 1250px) {
