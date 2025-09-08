@@ -1,33 +1,48 @@
-const swiper=new Swiper('.swiper', {// Navigation arrows
+const swiper = new Swiper('.swiper', {
     direction: 'horizontal',
     loop: true,
-    slidesPerView: slidesPerView,
-    spaceBetween: 40, // Отступ между слайдами
-    
-    scrollbar : {
-      el: '.swiper-scrollbar',
-      draggable: true,
+    spaceBetween: 40,
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+            navigation: false
+        },
+        700: {
+            slidesPerView: 2,
+            navigation: {
+                nextEl: '#right_button',
+                prevEl: '#left_button',
+            }
+        },
+        1200: {
+            slidesPerView: 3,
+            navigation: {
+                nextEl: '#right_button',
+                prevEl: '#left_button',
+            }
+        }
+    },
+    scrollbar: {
+        el: '.swiper-scrollbar',
+        draggable: true,
     }
-  });
-function act_swiper(){
-  if(window.innerWidth<700){
-    swiper.slidesPerView=1
-  }
-  else if(window.innerWidth<1200){
-    swiper.navigation = {nextEl: '#right_button',prevEl: '#left_button'};
-    swiper.slidesPerView=2;
-  }
-  else {
-    swiper.navigation = {nextEl: '#right_button',prevEl: '#left_button'};
-    swiper.slidesPerView=3;
-  }
-};
-act_swiper();
-window.addEventListener('resize', act_swiper);
+});
+
+// Удаляем старую функцию act_swiper и обработчик resize
+// Swiper сам handleит изменения через breakpoints
+
 document.getElementById('burger-checkbox').addEventListener('change', function() {
   if (this.checked) {
     document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.width = '100%';
+    document.body.style.top = `-${window.scrollY}px`;
   } else {
+    const scrollY = document.body.style.top;
+    document.body.style.position = '';
+    document.body.style.width = '';
+    document.body.style.top = '';
     document.body.style.overflow = '';
+    window.scrollTo(0, parseInt(scrollY || '0') * -1);
   }
 });

@@ -35,6 +35,9 @@ header{
     background-color: var(--almost-black-color);
     color: #fff;
 }
+b{
+  font-weight: 600;
+}
 #header_nav-desktop{
     width: 100%;
     height: 108px;
@@ -526,6 +529,9 @@ footer{
     flex-direction: column;
     align-items: center;
   }
+  #discont-span, #discont-span2{
+    text-align: center;
+  }
 }
 
 #discont{
@@ -597,6 +603,12 @@ footer form button{
   justify-content: space-between;
   align-items: stretch;
 }
+#mobile_menu{
+  display: none;
+}
+#burger-checkbox{
+    display: none;
+}
 @media (max-width:1000px) {
   .downer_of_footer-div{
     flex-direction: column;
@@ -641,7 +653,7 @@ footer form button{
     font-size: 12px;
   }
   main section{
-    width: 96vw;
+    width: 90vw;
   }
   .number_of_main_1-downer-section{
     /*font-size: 3rem;*/
@@ -702,21 +714,22 @@ footer form button{
     position: absolute;
     top: 10px;
     right: 10px;
-
+    background-repeat: no-repeat;
+    background-position: center;
   }
-  #burger-checkbox:checked ~ #mobile_menu {
-  overflow: hidden;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  }
-
-  #burger-checkbox:checked ~ #mobile_menu ~ body {
-    overflow: hidden;
+  #mobile_menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-  }
-  #burger-checkbox{
+    background-color: #141024;
     display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow-y: auto;
   }
   #ricevitore_telefonico{
     width: 44px;
@@ -761,11 +774,27 @@ footer form button{
 }
 @media (max-width:860px) {
   .section-downer{
-    flex-wrap: wrap;
-    gap: 0;
+    flex-direction: column;
+    gap: 30px;
   }
   .main_1-downer-section{
-    width: 50%;
+    width: 100%;
+    align-items: center;
+  }
+  .text_for_main_1-downer-section{
+    text-align: center;
+  }
+  #for_section-downer_2{
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+  }
+  .for_section-downer_2_part{
+    width: 100%;
+    align-items: center;
+  }
+  .for_section-downer_2_part-span2{
+    text-align: center;
   }
 }
 @media (max-width:700px) {
@@ -781,5 +810,54 @@ footer form button{
   #header_desktop-div{
     height: 100vh;
     align-items: center;
+  }
+}
+@media (max-width:520px){
+  footer form{
+    width: 100%;
+  }
+  #upper_of_footer{
+    padding: 10px;
+  }
+  .span_up_50px{
+    width: 100%;
+    font-size: 30px;
+    text-align: center;
+  }
+  #downer_of_footer{
+    height: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .downer_of_footer-div-span{
+    text-align: center;
+    font-size: 18px;
+  }
+  #downer_of_footer-div-span{
+    text-align: center;
+  }
+  .downer_of_footer-div{
+    gap: 20px;
+  }
+  #downer_of_footer-div-span{
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 380px) {
+  #discont{
+    width: 100%;
+  }
+  .course{
+    width: 100%;
+    padding: 40px 30px;
+  }
+  #discont-span{
+    font-size: 30px;
+  }
+}
+@media (max-width: 340px) {
+  .course button{
+    width: 100%;
   }
 }

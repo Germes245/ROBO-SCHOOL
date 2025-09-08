@@ -11,6 +11,7 @@
 <body>
     <div id="for_modal_"></div>
     <header>
+        <input id="burger-checkbox" type="checkbox">
         <nav id="header_nav-desktop">
             <a class="logo_link" href="/">ROBO.SCHOOL</a>
             <div class="links">
@@ -23,16 +24,16 @@
         <nav id="header_nav-mobile">
             <a class="logo_link" href="">ROBO.SCHOOL</a>
             <div id="header_nav-mobile-buttons">
-                <input id="burger-checkbox" type="checkbox">
                 <button id="ricevitore_telefonico"></button>
                 <label id="opening_label" for="burger-checkbox"></label>
-                <nav id="mobile_menu">
-                    <label id="closing_label" for="burger-checkbox" ></label>
-                    <span>О школе</span>
-                    <span>Тренеры</span>
-                    <span>Стоимость</span>
-                </nav>
             </div>
+            <!-- Меню перемещено на верхний уровень для правильной работы с CSS-селекторами -->
+        </nav>
+        <nav id="mobile_menu">
+            <label id="closing_label" for="burger-checkbox"></label>
+            <a href="">О школе</a>
+            <a href="">Тренеры</a>
+            <a href="">Стоимость</a>
         </nav>
         <div id="header_desktop-div">
             <div id="header_desktop-div-left">
@@ -52,7 +53,7 @@
     <main>
         <div class="color_div">
             <section id="main_1">
-                <span id="main_1-up_span">Robo School – учреждение для формирования кадрового педагогического резерва в сфере робототехникии программирования</span>
+                <span id="main_1-up_span"><b>Robo School</b> – учреждение для формирования кадрового педагогического резерва в сфере робототехникии программирования</span>
                 <div class="section-downer" id="for_section-downer_1">
                     <div class="main_1-downer-section">
                         <span class="number_of_main_1-downer-section">10</span>
@@ -75,7 +76,7 @@
         </div>
         <div class="color_div" style="background-color: #F9F9F9">
             <section id="main_2">
-                <span class="span_up_50px">Что вы получите после курса</span>
+                <span class="span_up_50px"><b>Что вы получите после курса</b></span>
                 <div class="section-downer" id="for_section-downer_2">
                     <div class="for_section-downer_2_part">
                         <span class="for_section-downer_2_part-span">Удостоверение</span>
@@ -94,7 +95,7 @@
         </div>
         <div class="color_div">
             <section id="main_3">
-                <span class="span_up_50px">Профессиональные тренеры</span>
+                <span class="span_up_50px"><b>Профессиональные тренеры</b></span>
                 <div class="swiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
@@ -155,7 +156,7 @@
         </div>
         <div class="color_div">
             <section id="main_4">
-                <span class="span_up_50px">Выберите нужный пакет</span>
+                <span class="span_up_50px"><b>Выберите нужный пакет</b></span>
                 <div id="courses">
                     <div class="course">
                         <span class="course-span1">– PRO –</span>
