@@ -344,7 +344,7 @@ main section{
 
 /* Обновленные стили для слайдера */
 .swiper {
-  width: 1160px;
+  width: 100%;
   height: auto; /* Изменено с фиксированной высоты */
   margin-top: 60px;
 }
