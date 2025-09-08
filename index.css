@@ -687,13 +687,33 @@ footer form button{
     background-position: center;
     background-color: #00000000;
   }
-  #header_nav-mobile-buttons label{
+  #opening_label{
     width: 44px;
     height: 44px;
     border-radius: 10px;
     background-image: url('./img/burger\ button.svg');
-    position: relative;
-    z-index: 3;
+    z-index: 2;
+  }
+  #closing_label{
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background-image: url('./img/cross.svg');
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+  }
+  #burger-checkbox:checked ~ #mobile_menu {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  }
+
+  #burger-checkbox:checked ~ #mobile_menu ~ body {
+    overflow: hidden;
+    height: 100%;
   }
   #burger-checkbox{
     display: none;
@@ -705,12 +725,6 @@ footer form button{
   }
   #burger_button{
     background-image: url('./img/cross.svg');
-  }
-  #burger-checkbox:checked ~ label{
-    background-image: url('./img/cross.svg');
-    position: fixed;
-    top: 10px;
-    right: 17px;
   }
   #mobile_menu{
     position: fixed;
@@ -755,6 +769,9 @@ footer form button{
   }
 }
 @media (max-width:700px) {
+  #right_button, #left_button{
+    display: none;
+  }
   #header_desktop-div-left{
     margin-bottom: 0;
   }

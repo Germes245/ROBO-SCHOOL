@@ -1,17 +1,4 @@
-function act_swiper(){
-  let slidesPerView=3;
-  if(window.innerWidth<1200){
-    slidesPerView=2;
-  }
-  if(window.innerWidth<700){
-    slidesPerView=1;
-  }
-  new Swiper('.swiper', {// Navigation arrows
-    navigation: {
-      nextEl: '#right_button',
-      prevEl: '#left_button',
-    },
-
+const swiper=new Swiper('.swiper', {// Navigation arrows
     direction: 'horizontal',
     loop: true,
     slidesPerView: slidesPerView,
@@ -22,11 +9,25 @@ function act_swiper(){
       draggable: true,
     }
   });
+function act_swiper(){
+  if(window.innerWidth<700){
+    swiper.slidesPerView=1
+  }
+  else if(window.innerWidth<1200){
+    swiper.navigation = {nextEl: '#right_button',prevEl: '#left_button'};
+    swiper.slidesPerView=2;
+  }
+  else {
+    swiper.navigation = {nextEl: '#right_button',prevEl: '#left_button'};
+    swiper.slidesPerView=3;
+  }
 };
 act_swiper();
 window.addEventListener('resize', act_swiper);
-
-/*burger_button.addEventListener('click',()=>{
-  console.log(burger_button.classList);
-  burger_button.classList.toggle('cross');
-});*/
+document.getElementById('burger-checkbox').addEventListener('change', function() {
+  if (this.checked) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
+  }
+});
