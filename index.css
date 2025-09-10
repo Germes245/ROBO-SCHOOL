@@ -27,6 +27,11 @@ a{
 }
 button{
     cursor: pointer;
+    background-color: transparent;
+    width: fit-content;
+}
+label{
+  cursor: pointer;
 }
 header{
     display: flex;
@@ -215,6 +220,76 @@ main section{
   overflow: visible;
 }
 
+#for_swiper, #modal_window{
+  display: none;
+}
+
+#for_swiper:checked ~ #modal_window{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #1410241A;
+  z-index: 2;
+}
+
+#modal_window section{
+  width: 940px;
+  height: calc(100vh - 10px);
+  max-height: 768px;
+  border-radius: 20px;
+  padding: 40px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 20px;
+}
+
+#modal_window_profile{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+}
+
+#modal_window_profile_about_homos{
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  gap: 40px;
+}
+
+#modal_window_profile_about_homos-div{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+}
+
+#sociale_medie{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+hr{
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+}
+
+#modal_window section article:last-child{overflow-y:scroll; scrollbar-width: 5px;}
+
+body.modal-open {
+    overflow: hidden;
+}
+
 .swiper-slide{
   width: 360px;
   position: relative;
@@ -231,7 +306,7 @@ main section{
   height: 500px;
 }
 
-.swiper-slide a{
+.more_details{
   color: #D52027;
   font-size: 18px;
   margin-top: 20px;
@@ -532,6 +607,10 @@ footer{
   #discont-span, #discont-span2{
     text-align: center;
   }
+  #for_swiper:checked ~ #modal_window{
+    background-color: #fff;
+  }
+  #modal_window section
 }
 
 #discont{
@@ -573,6 +652,7 @@ footer form button{
   background-color: #141024;
   border-radius: 5px;
   color: #fff;
+  width: auto;
 }
 
 #procents{
@@ -588,7 +668,6 @@ footer form button{
 }
 
 #downer_of_footer{
-  height: 159px;
   background-color: #141024;
   padding: 40px 100px;
   display: flex;
@@ -654,6 +733,7 @@ footer form button{
   }
   main section{
     width: 90vw;
+    align-items: center;
   }
   .number_of_main_1-downer-section{
     /*font-size: 3rem;*/
@@ -825,7 +905,6 @@ footer form button{
     text-align: center;
   }
   #downer_of_footer{
-    height: auto;
     padding-left: 10px;
     padding-right: 10px;
   }

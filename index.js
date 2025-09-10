@@ -46,3 +46,15 @@ document.getElementById('burger-checkbox').addEventListener('change', function()
     window.scrollTo(0, parseInt(scrollY || '0') * -1);
   }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const modalCheckbox = document.getElementById('for_swiper');
+    
+    modalCheckbox.addEventListener('change', function() {
+        if (this.checked) {
+            document.body.classList.add('modal-open');
+        } else {
+            document.body.classList.remove('modal-open');
+        }
+    });
+});
