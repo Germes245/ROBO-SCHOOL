@@ -21,6 +21,9 @@ body{
 a{
     text-decoration: none;
 }
+p{
+  font-size: 20px;
+}
 .links a:hover{
     /*border-top: 3px solid #fff;*/
     border-bottom: 3px solid #fff;
@@ -256,6 +259,7 @@ main section{
   flex-direction: row;
   justify-content: space-between;
   align-items: start;
+  position: relative;
 }
 
 #modal_window_profile_about_homos{
@@ -609,8 +613,14 @@ footer{
   }
   #for_swiper:checked ~ #modal_window{
     background-color: #fff;
+    padding: 40px 10px;
   }
-  #modal_window section
+  #modal_window section{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: #000 0px 0px 8px;
+  }
 }
 
 #discont{
@@ -877,7 +887,52 @@ footer form button{
     text-align: center;
   }
 }
+#modal_window_profile-label{
+  color: #141024B2;
+}
+#modal_window_profile_about_homos-image{
+  width: 160px;
+  height: 222px;
+  background-image: url('/img/A.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#modal_window_profile_about_homos-div-span{
+  font-size: 18px; color: #141024B2;
+}
+#section-div{
+  display: flex; flex-direction: row; justify-content: space-between;font-size: 20px;
+}
+#section-div_mobile{
+  display: none;
+}
 @media (max-width:700px) {
+  #section-div{
+    display: none;
+  }
+  #section-div_mobile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: #fff;
+    width: 100%;
+    height: 46px;
+    background-color: #D52027;
+  }
+  #modal_window_profile_about_homos-div-span{
+    font-size: 12px;
+  }
+  #modal_window_profile_about_homos{
+    gap: 10px;
+    align-items: stretch;
+  }
+  #modal_window_profile_about_homos-image{
+    width: 60px;
+    height: 88px;
+    border-radius: 5px;
+  }
   #right_button, #left_button{
     display: none;
   }
@@ -890,6 +945,16 @@ footer form button{
   #header_desktop-div{
     height: 100vh;
     align-items: center;
+  }
+  #modal_window_profile-label{
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    background-image: url('/img/cross.svg');
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
+    color: transparent;
   }
 }
 @media (max-width:520px){
