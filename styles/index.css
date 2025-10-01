@@ -795,7 +795,7 @@ footer form button{
     height: 44px;
     border-radius: 10px;
     background-image: url('../img/burger\ button.svg');
-    z-index: 2;
+    z-index: 3;
   }
   #closing_label{
     width: 44px;
@@ -826,6 +826,7 @@ footer form button{
     width: 44px;
     height: 44px;
     background-image: url('../img/ricevitore\ telefonico.svg');
+    z-index: 3;
   }
   #burger_button{
     background-image: url('../img/cross.svg');
